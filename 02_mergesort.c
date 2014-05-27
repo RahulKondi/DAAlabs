@@ -53,4 +53,5 @@ clock_gettime (CLOCK_REALTIME, &time_STOP);
 }
 
 void merge_sort (int LOW, int HIGH) {
-	
+}
+
