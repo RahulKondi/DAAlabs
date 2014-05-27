@@ -1,0 +1,57 @@
+<p>/*
+<em>*</em> main ()</p>
+
+<ul>
+<li>-01. DECALRE timespec VARIABLES</li>
+<li>-02. GET NUMBER OF ELEMENTS (&amp;n)</li>
+<li>-03. CALL SRAND FUNCTION WITH ((unsigned)time(NULL)</li>
+<li><p>-04. RANDOMISE ARRAY (a[i] = rand()%20) AND PRINT EACH ELEMENT GENERATED, IMMEDIATELY</p></li>
+<li><p>-05. START TIMER</p></li>
+<li><p>-06. CALL sorting PROCEDURE WITH (0, n-1); (LOW , HIGH)</p></li>
+<li><p>-07. STOP TIMER</p></li>
+<li><p>-08. CALCULATE DIFFERENCE ( (time<em>STOP.tv</em>sec * 1000000000 + time<em>STOP.tv</em>nsec)  -  (time<em>START.tv</em>sec * 1000000000 + time<em>START.tv</em>nsec) )</p></li>
+<li><p>-09. PRINT SORTED ARRAY</p></li>
+<li>-10. PRINT duration USING %e
+*/</li>
+</ul>
+
+<h1>include<stdio.h></h1>
+
+<h1>include<time.h></h1>
+
+<h1>include<omp.h></h1>
+
+<p>int data<em>RAW[20], data</em>SORTED[20];</p>
+
+<p>int main () {
+    void merge<em>sort(int LOW, int HIGH);
+    int number</em>elements, i;
+    struct timespec time<em>START, time</em>STOP;
+    double DURATION;</p>
+
+<pre><code>printf("\nEnter the number of elements to be sorted: ");
+ scanf("%d", &amp;number_elements);
+srand ((unsigned)time(NULL));
+printf("\nElements generated:");
+for (i = 0; i &lt; number_elements; i++) {
+    data_RAW[i] = rand() % 20;
+    printf("\n%d", data_RAW[i]);
+    }
+</code></pre>
+
+<p>clock<em>gettime (CLOCK</em>REALTIME, &amp;time<em>START);
+    merge</em>sort (0, number<em>elements - 1);
+clock</em>gettime (CLOCK<em>REALTIME, &amp;time</em>STOP);</p>
+
+<pre><code>DURATION = ( (time_STOP.tv_sec * 1000000000 + time_STOP.tv_nsec) - (time_START.tv_sec * 1000000000 + time_START.tv_nsec) );
+
+printf("\nThe sorted order :");
+for (i = 0; i &lt; number_elements; i++)
+    printf("\t%d", data_RAW[i]);
+printf("\nDuration : %e", DURATION);
+</code></pre>
+
+<p>return 0;
+}</p>
+
+<p>void merge_sort (int LOW, int HIGH) {</p>
